@@ -1,0 +1,35 @@
+{% load static %}
+
+<nav class="navbar navbar-light" style="background-color: lightskyblue">
+    <div class="container">
+      <a class="navbar-brand">
+        <img src="{% static 'img/icon.png' %}" width="30" height="30" class="d-inline-block align-top" alt="">
+        <span style="color:green">Refferral</span>System
+      </a>
+        {%if user.is_authenticated %}
+        <div class='text-center '>
+            Пользователь : {{ request.user }}
+        </div>
+        {% endif %}
+
+      <ul class="nav nav-pills">
+        <li class="nav-item"> 
+          <a class="nav-link {% if view_name  == 'about:author' %}active{% endif %}" >Об авторе</a>
+        </li>
+       
+        {%if user.is_authenticated %}
+        
+        
+        <li class="nav-item"> 
+          <a class="nav-link {% if view_name  == 'users:logout' %}active{% endif %}" href={% url 'users:logout' %}>Выйти</a>
+        </li>
+      
+        {% else %}
+        <li class="nav-item"> 
+          <a class="nav-link {% if view_name  == 'users:login' %}active{% endif %}  link-light"  href={% url 'users:auth' %}>Войти</a>
+        </li>
+        
+        {% endif %}
+      </ul>
+    </div>
+  </nav>   

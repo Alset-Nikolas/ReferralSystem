@@ -1,0 +1,31 @@
+{% load static %}
+<div class='text-center p-3 bg_white'>
+    Ваш токен: {{ request.user.token }}
+</div>
+{% if token_activated %}
+    <div class='text-center p-3 bg_white'>
+        Вы активировали токен: {{ token_activated.token }} <br>
+        <div class='text-smoll'>
+        {{ token_activated.date }} <br>
+        Владелец: {{ token_activated.user }}
+        </div>
+    </div>
+{% else%}
+    <div class="registration-cssave">
+    <form method='POST' action="{% url 'tokens:activate' %}">
+        {% csrf_token %}
+        <h3 class="text-center">Активация инвайт-кода</h3>
+
+        <div class="form-group">
+            <input class="form-control item" name="token" id="token" placeholder="XXXXXXXX" required>
+            <div>
+                {% if form_err %}
+                Такого кода нет. Повторите попытку
+                {% endif %}
+            </div>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary btn-block create-account" type="submit">Активация</button>
+        </div>
+    </form>
+{% endif %}

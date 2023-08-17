@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Проверка токена
+{% endblock %}
+
+{% block content %}
+<div class="registration-cssave">
+    <form method='POST'>
+        {% csrf_token %}
+        <h3 class="text-center">Проверка номера</h3>
+
+        <div class="form-group">
+            <input class="form-control item" name="phone_token" id="phone_token" placeholder="XXXX" pattern="\d{4}" required>
+            <div>
+            {% if form.errors %}
+                <p>Ошибка токена. Попробуйте еще раз.</p>
+            {% endif %}
+            </div>
+        </div>
+        <input class="form-control item" type="hidden" name="phone" value={{phone}}>
+        <div class="form-group">
+            <button class="btn btn-primary btn-block create-account" type="submit">Подтвердить</button>
+        </div>
+    </form>
+</div>
+{% endblock %} 
