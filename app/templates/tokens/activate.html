@@ -7,7 +7,7 @@
         Вы активировали токен: {{ token_activated.token }} <br>
         <div class='text-smoll'>
         {{ token_activated.date }} <br>
-        Владелец: {{ token_activated.user }}
+        Владелец: {{ token_activated.token.user }}
         </div>
     </div>
 {% else%}
@@ -20,7 +20,7 @@
             <input class="form-control item" name="token" id="token" placeholder="XXXXXXXX" required>
             <div>
                 {% if form_err %}
-                Такого кода нет. Повторите попытку
+                 {{form_err}}
                 {% endif %}
             </div>
         </div>

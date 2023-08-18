@@ -1,8 +1,9 @@
-from django.contrib.auth.hashers import check_password
 from django.contrib.auth import get_user_model
+from django.contrib.auth.hashers import check_password
 from django.db.models import Q
-from .validators import check_user_phone_token
 from tokens.models import Token
+
+from .validators import check_user_phone_token
 
 User = get_user_model()
 
@@ -11,15 +12,14 @@ User = get_user_model()
 class PhoneUsernameAuthenticationBackend(object):
     @staticmethod
     def authenticate(request, phone_number=None, phone_token=None):
+        print('request>>>>>>>>>>>>>>>>>', request)
         user=None
         try:
             user = User.objects.get(phone_number=phone_number)
         except User.DoesNotExist:
             if check_user_phone_token(phone_token, phone_number):
-                user = User.objects.create_user(phone_number=phone_number) 
-                Token.objects.create(user=user)
-                return user
-
+                return User.objects.create_user(phone_number=phone_number) 
+            
         if user and check_user_phone_token(phone_token, phone_number):
             return user
 

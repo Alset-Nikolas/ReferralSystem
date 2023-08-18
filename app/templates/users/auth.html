@@ -9,7 +9,7 @@
     <form method='GET' >
         {% csrf_token %}
         <h3 class="text-center">Авторизация</h3>
-
+        <input class="form-control item" type="hidden" name="next" value={{next}}>
         <div class="form-group">
             <input class="form-control item" type="tel" name="phone" id="phone" placeholder="7-XXX-XXX-XXXX" pattern="7-[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
         </div>

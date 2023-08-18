@@ -1,6 +1,9 @@
-from django.db import models
+from datetime import datetime
+
 from django.contrib.auth import get_user_model
-from datetime import datetime    
+from django.db import models
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 from django.utils.crypto import get_random_string
 
 User = get_user_model()
@@ -24,6 +27,11 @@ class Token(models.Model):
     
     def __str__(self):
         return str(self.id) 
+    
+    @receiver(post_save, sender=User) 
+    def create_user_token(sender, instance, created, **kwargs):
+        if created:
+            Token.objects.create(user=instance)
     
 class TokenActivated(models.Model):
     user = models.OneToOneField(

@@ -1,6 +1,8 @@
-from django.forms import Form, CharField, PasswordInput
-from django.core.exceptions import ValidationError
 from uuid import UUID
+
+from django.core.exceptions import ValidationError
+from django.forms import CharField, Form, PasswordInput
+
 
 def validate_token(token):
     return len(token)==6

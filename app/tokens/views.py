@@ -1,15 +1,16 @@
 from typing import Any, Dict
-from django.shortcuts import render
-from django.views import View
+
 from django.contrib.auth import login
-from django.shortcuts import redirect, render
-from django.urls import resolve
-from django.views.generic import TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .forms import TokenFormActivate
-from django.urls import reverse
 from django.contrib.messages import constants as messages
-from .models import TokenActivated, Token
+from django.shortcuts import redirect, render
+from django.urls import resolve, reverse
+from django.views import View
+from django.views.generic import TemplateView
+
+from .forms import TokenFormActivate
+from .models import Token, TokenActivated
+
 
 class ActivateToken(LoginRequiredMixin, View):
     form_class = TokenFormActivate
@@ -20,7 +21,10 @@ class ActivateToken(LoginRequiredMixin, View):
             user = request.user
             if Token.objects.filter(id=form.cleaned_data.get('token')).exists():
                 token = Token.objects.get(id=form.cleaned_data.get('token'))
-                token.users.create(user=user)
+                if token.user == self.request.user:
+                    request.session['form_err'] = 'Ошибка токена! Свой токен нельзя использовать'
+                else:
+                    token.users.create(user=user)
                 return redirect('users:profile')
-        request.session['form_err'] = 'Ошибка токена! Либо такого нет либо это ваш токен!'
+        request.session['form_err'] = 'Ошибка токена! Такого нет!'
         return redirect('users:profile')
