@@ -20,9 +20,9 @@
 </h2>
 
 1. Клонируем репозиторий
-   * git clone git@github.com:Alset-Nikolas/ReferralSystem.git
+  ```git clone git@github.com:Alset-Nikolas/ReferralSystem.git```
 2. Настройка файла infra/.env
-
+```
     DB_ENGINE=django.db.backends.postgresql
     DB_NAME=referral_system_db 
     POSTGRES_USER=postgres
@@ -31,11 +31,14 @@
     DB_PORT=5432 
 
     DJANGO_SUPERUSER_PHONE=7-000-000-0000
+```
 
 
 3. Собрать и запустить контейнеры
-  * sudo docker-compose build
-  * sudo docker-compose up
+  ```
+  sudo docker-compose build
+  sudo docker-compose up
+  ```
 
     
 <h2 align="center">3. Иллюстрация</h2>
