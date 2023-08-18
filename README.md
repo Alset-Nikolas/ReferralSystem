@@ -20,7 +20,10 @@
 </h2>
 
 1. Клонируем репозиторий
-  ```git clone git@github.com:Alset-Nikolas/ReferralSystem.git```
+
+```
+    git clone git@github.com:Alset-Nikolas/ReferralSystem.git
+```
 2. Настройка файла infra/.env
 ```
     DB_ENGINE=django.db.backends.postgresql
