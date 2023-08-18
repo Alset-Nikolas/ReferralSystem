@@ -2,6 +2,13 @@ import os
 from pathlib import Path
 
 from django.urls import reverse_lazy
+from dotenv import load_dotenv
+
+dotenv_path = os.path.join(
+    Path(__file__).resolve().parent.parent.parent, "infra", ".env"
+)
+if os.path.exists(dotenv_path):
+    load_dotenv(dotenv_path)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -14,9 +21,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-r7lng6xaaystn%o45+l=_63gqr*h^cc$i68&-x!a0n#%&^eh5v'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -28,7 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',
+    'drf_yasg',
     'tokens',
     'users',
 ]
@@ -65,7 +72,8 @@ TEMPLATES = [
     },
 ]
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+STATIC_URL = "/static/"
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
 WSGI_APPLICATION = 'app.wsgi.application'
 
@@ -75,19 +83,17 @@ LOGIN_URL = reverse_lazy("users:auth")
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 
+
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "referral_system_db",
-        "USER": "postgres",
-        "PASSWORD": "qwerty",
-        # "HOST": "tacy_backend_postgres_container",
-        "HOST": "localhost",
-        "PORT": "5432",
+        "ENGINE": os.getenv('DB_ENGINE'),
+        "NAME": os.getenv("DB_NAME"),
+        "USER": os.getenv("POSTGRES_USER"),
+        "PASSWORD": os.getenv("POSTGRES_PASSWORD"),
+        "HOST": os.getenv("DB_HOST"),
+        "PORT": os.getenv("DB_PORT"),
     }
 }
-
-
 
 
 # Password validation

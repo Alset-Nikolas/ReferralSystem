@@ -30,8 +30,9 @@ class AuthUserByTelPage(View):
         if request.GET.get('next'):
             conext['next']=request.GET.get('next')
         if not form.is_valid() or not request.GET.get('phone'):
+            print(form.errors)
             return render(request, self.template_name, context=conext)
-    
+        print(form.errors)
         return render(request, self.template_name_check_token, context=conext)
 
     def post(self, request):
@@ -43,6 +44,7 @@ class AuthUserByTelPage(View):
             if user:
                 login(request, user)             
                 return redirect('users:profile') if not next else redirect(next)
+        print(form.errors)
         return render(request, self.template_name_check_token, {'form': form, 'phone': request.POST.get('phone')})
     
 class ProfileUserPage(LoginRequiredMixin, TemplateView):

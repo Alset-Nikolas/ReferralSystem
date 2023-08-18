@@ -1,0 +1,55 @@
+openapi: 3.0.2
+info:
+  title: "RefferalSystemDocs"
+  version: "1.0"
+paths:
+  /logout/:
+    get:
+      summary: Выход из системы
+      responses:
+        200:
+          description: Возвраащает html
+          content:
+            text/html:
+              shema:
+                type: string
+  /auth/:
+    get:
+      summary: Просмотр страницы авторизации.
+      responses:
+        200:
+          description: Возвраащает html
+          content:
+            text/html:
+              shema:
+                type: string
+    post:
+      summary: "Авторизация пользователя"
+      parameters:
+        - in: formData
+          name: phone
+          type: string
+        - in: formData
+          name: phone_token
+          type: string
+      responses:
+        200:
+          description: Создает нового пользователя или логинит старого
+          content:
+            text/html:
+              shema:
+                type: string
+  /tokens/activate/:
+    post:
+      summary: "Активация токена"
+      parameters:
+        - in: formData
+          name: token
+          type: string
+      responses:
+        200:
+          description: Активирует токен другого пользователя
+          content:
+            text/html:
+              shema:
+                type: string

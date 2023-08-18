@@ -12,6 +12,7 @@
     .
     ├── app   -> Приложение
     ├── README.md -> Описание (мы тут)
+    ├── ReferralSystem.postman_collection.json - коллекция Postman
     └── TASK.docx -> ТЗ
 
 <h2 align="center">2. Запуск
@@ -20,17 +21,35 @@
 
 1. Клонируем репозиторий
    * git clone git@github.com:Alset-Nikolas/ReferralSystem.git
+2. Настройка файла infra/.env
+
+    DB_ENGINE=django.db.backends.postgresql
+    DB_NAME=referral_system_db 
+    POSTGRES_USER=postgres
+    POSTGRES_PASSWORD=qwerty1234QWERTY
+    DB_HOST=refferal_system_db
+    DB_PORT=5432 
+
+    DJANGO_SUPERUSER_PHONE=7-000-000-0000
+    DJANGO_SUPERUSER_USERNAME=z
+    DJANGO_SUPERUSER_PASSWORD=z
+    DJANGO_FIRST_NAME_SUPERUSER=z
+    DJANGO_SECOND_NAME_SUPERUSER=z
+    DJANGO_LAST_NAME_SUPERUSER=z
+
+3. Собрать и запустить контейнеры
+  * sudo docker-compose build
+  * sudo docker-compose up
 
     
 <h2 align="center">3. Иллюстрация</h2>
 
-<p>
 <img width="50" height="50" src="https://img.icons8.com/stickers/100/phone.png" alt="phone"/>
 Регистрация пользователя происходит при первой авторизации.<br>
 Пользователь вбивает свой номер, например 7-999-100-1031<br>
 Дальше нужно ввести 4х значный код: для простоты это 4 последние цифры номера (для нашего примера это 1031)   <br>
 
-</p>
+
 
 <details>
   <summary>Авторизация по номеру телефона. Первый запрос на ввод номера телефона.</summary>
@@ -81,3 +100,24 @@
   <summary>Список пользователей</summary>
   <img src="./info/token_list.png" name="image-name">
 </details>
+
+
+<h2 align="center">4. Документация Api
+<img width="40" height="40" src="https://img.icons8.com/office/40/Archive-List-Of-Parts.png" alt="Archive-List-Of-Parts"/>
+</h2>
+Если перейти по /swagger-ui/ будет Swagger-ui
+<img src="./info/docs.png" name="image-name">
+
+<h2 align="center">5. Админка
+<img width="48" height="48" src="https://img.icons8.com/color/48/admin-settings-male.png" alt="admin-settings-male"/>
+</h2>
+Если перейти по /admin/ будет форма авторизации. Если зайти под админом откроется адмнка
+<img src="./info/admin.png" name="image-name">
+
+<h2 align="center">6. Postman
+<img width="50" height="50" src="https://img.icons8.com/bubbles/50/man-with-a-mailbox.png" alt="man-with-a-mailbox"/>
+</h2>
+
+<div align="center">
+<img src="./info/postman.png" name="image-name" center>
+</div>

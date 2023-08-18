@@ -1,0 +1,603 @@
+{
+	"info": {
+		"_postman_id": "2320ab67-6d9d-4cec-8a87-2d539efbe1ec",
+		"name": "ReferralSystem",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21151897"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "ValidRegistration",
+					"item": [
+						{
+							"name": "user1",
+							"item": [
+								{
+									"name": "RegistrationIndex",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"var xsrfCookie = postman.getResponseCookie(\"csrftoken\")",
+													"console.log(xsrfCookie)",
+													"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value)"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-CSRFToken",
+												"value": "{{xsrf-token}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/auth/",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"auth",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "login_Step1",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"var xsrfCookie = postman.getResponseCookie(\"csrftoken\")",
+													"console.log(xsrfCookie)",
+													"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value)"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-CSRFToken",
+												"value": "{{xsrf-token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "phone",
+													"value": "7-777-777-7777",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/auth/",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"auth",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "login_Step2",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"var xsrfCookie = postman.getResponseCookie(\"csrftoken\")",
+													"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value)"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-CSRFToken",
+												"value": "{{xsrf-token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "phone",
+													"value": "7-777-777-7777",
+													"description": "Телефон пользователя",
+													"type": "text"
+												},
+												{
+													"key": "phone_token",
+													"value": "7777",
+													"description": "Токен (4 послед. цифры)",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/auth/",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"auth",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "logout_777",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"var xsrfCookie = postman.getResponseCookie(\"csrftoken\")",
+													"console.log(xsrfCookie)",
+													"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value)"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-CSRFToken",
+												"value": "{{xsrf-token}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/logout/",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"logout",
+												""
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "user2",
+							"item": [
+								{
+									"name": "RegistrationIndex Copy",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"var xsrfCookie = postman.getResponseCookie(\"csrftoken\")",
+													"console.log(xsrfCookie)",
+													"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value)"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-CSRFToken",
+												"value": "{{xsrf-token}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/auth/",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"auth",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "login_Step1 Copy",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"var xsrfCookie = postman.getResponseCookie(\"csrftoken\")",
+													"console.log(xsrfCookie)",
+													"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value)"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-CSRFToken",
+												"value": "{{xsrf-token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "phone",
+													"value": "7-777-777-7777",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/auth/",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"auth",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "login_Step2 Copy",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"var xsrfCookie = postman.getResponseCookie(\"csrftoken\")",
+													"console.log(xsrfCookie)",
+													"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value)"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-CSRFToken",
+												"value": "{{xsrf-token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "phone",
+													"value": "7-111-111-1111",
+													"type": "text"
+												},
+												{
+													"key": "phone_token",
+													"value": "1111",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/auth/",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"auth",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "logout_111 Copy",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"var xsrfCookie = postman.getResponseCookie(\"csrftoken\")",
+													"console.log(xsrfCookie)",
+													"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value)"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-CSRFToken",
+												"value": "{{xsrf-token}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/logout/",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"logout",
+												""
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "NotValidRegistration",
+					"item": [
+						{
+							"name": "RegistrationIndex2",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var xsrfCookie = postman.getResponseCookie(\"csrftoken\")",
+											"console.log(xsrfCookie)",
+											"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value)"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-CSRFToken",
+										"value": "{{xsrf-token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/auth/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"auth",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "login_Step1_error_not_valid_phone",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var xsrfCookie = postman.getResponseCookie(\"csrftoken\")",
+											"console.log(xsrfCookie)",
+											"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value)"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-CSRFToken",
+										"value": "{{xsrf-token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phone",
+											"value": "7-777-777-7777",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/auth/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"auth",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "login_Step1_error_not_valid_phone_token",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var xsrfCookie = postman.getResponseCookie(\"csrftoken\")",
+											"console.log(xsrfCookie)",
+											"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value)"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-CSRFToken",
+										"value": "{{xsrf-token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phone",
+											"value": "7-777-777-7777",
+											"type": "text"
+										},
+										{
+											"key": "phone_token",
+											"value": "7776",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/auth/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"auth",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "tokens",
+			"item": [
+				{
+					"name": "login_Step2 Copy 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie = postman.getResponseCookie(\"csrftoken\")",
+									"console.log(xsrfCookie)",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-CSRFToken",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "phone",
+									"value": "7-111-111-1111",
+									"type": "text"
+								},
+								{
+									"key": "phone_token",
+									"value": "1111",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/tokens/activate/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"tokens",
+								"activate",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://127.0.0.1:8000",
+			"type": "string"
+		}
+	]
+}
