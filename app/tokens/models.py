@@ -38,6 +38,7 @@ class TokenActivated(models.Model):
         User,
         on_delete=models.CASCADE,
         related_name="token_activated",
+        unique=True
     )
     token = models.ForeignKey(
         Token,

@@ -23,6 +23,8 @@ class ActivateToken(LoginRequiredMixin, View):
                 token = Token.objects.get(id=form.cleaned_data.get('token'))
                 if token.user == self.request.user:
                     request.session['form_err'] = 'Ошибка токена! Свой токен нельзя использовать'
+                elif TokenActivated.objects.filter(user=user).exists:
+                    request.session['form_err'] = 'Ошибка токена! У пользователя токен уже активирован'
                 else:
                     token.users.create(user=user)
                 return redirect('users:profile')

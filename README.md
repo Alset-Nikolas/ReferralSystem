@@ -128,7 +128,7 @@
 
 
 <h2 align="center">7. Для тестов полезен pgAdmin
-<img width="50" height="50" src="https://img.icons8.com/bubbles/50/man-with-a-mailbox.png" alt="man-with-a-mailbox"/>
+<img width="48" height="48" src="https://img.icons8.com/color/48/postgreesql.png" alt="postgreesql"/>
 </h2>
 http://ip_server:5555/
 <div align="center">
