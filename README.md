@@ -26,7 +26,7 @@
 ```
 2. Настройка файла infra/.env
 ```
-    SECRET_KEY = 'django-insecure-r7lng6xaaystn%o45+l=_63gqr*h^cc$i68&-x!a0n#%&^eh5v'
+    SECRET_KEY=django-insecure-r7lng6xaaystn%o45+l=_63gqr*h^cc$i68&-x!a0n#%&^eh5v
     
     DB_ENGINE=django.db.backends.postgresql
     DB_NAME=referral_system_db 
@@ -39,7 +39,7 @@
 ```
 
 
-3. Собрать и запустить контейнеры
+3. Собрать и запустить контейнеры в ./infra
   ```
   sudo docker-compose build
   sudo docker-compose up
