@@ -8,7 +8,7 @@
 <h2 align="center">1. Структура репозитория:
 <img width="64" height="64" src="https://img.icons8.com/external-justicon-lineal-color-justicon/64/external-tree-tree-justicon-lineal-color-justicon-6.png" alt="external-tree-tree-justicon-lineal-color-justicon-6"/>
 </h2>
-
+  Приложение развернуто вот тут:  http://62.84.115.61/
     .
     ├── app   -> Приложение
     ├── README.md -> Описание (мы тут)
