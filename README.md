@@ -13,7 +13,21 @@
 
     .
     ├── app   -> Приложение
-    ├── README.md -> Описание (мы тут)
+    │   ├── docker-entrypoint.sh           - Скрипт запуска
+    │   ├── Dockerfile                     - Докер файл
+    │   ├── manage.py
+    │   ├── requirements.txt               - Зависимости
+    │   ├── static                         - Статика
+    │   ├── templates                      - Шаблоны
+    │   ├── tokens                         - Модуль с токенами 
+    │   └── users                          - Модуль с пользователями
+    ├── README.md -> Описание (мы тут)     
+    ├── info - Статика для README
+    ├── infra -> Настройка запсука
+    │   ├── docker-compose.yaml            - Запуск контейнеров
+    │   ├── docker_postgres_init.sql       - Создание ДБ referral_system_db
+    │   ├── nginx                          - Настройка nginx
+    │   └── static
     ├── ReferralSystem.postman_collection.json - коллекция Postman
     └── TASK.docx -> ТЗ
 
