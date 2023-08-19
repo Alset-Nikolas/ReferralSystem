@@ -4,7 +4,8 @@
 </a>
 </h1>
 
-<h3 align="center">Приложение для тестов развернуто тут:  http://62.84.115.61/  </h3> 
+<h3 align="center">Приложение для тестов <a href='http://62.84.115.61/'> RefferalSystem</a></h3> 
+
 
 <h2 align="center">1. Структура репозитория:
 <img width="64" height="64" src="https://img.icons8.com/external-justicon-lineal-color-justicon/64/external-tree-tree-justicon-lineal-color-justicon-6.png" alt="external-tree-tree-justicon-lineal-color-justicon-6"/>
@@ -117,6 +118,7 @@
 <img width="48" height="48" src="https://img.icons8.com/color/48/admin-settings-male.png" alt="admin-settings-male"/>
 </h2>
 Если перейти по /admin/ будет форма авторизации. Если зайти под админом откроется адмнка
+Телефон админа 7-000-000-0000
 <img src="./info/admin.png" name="image-name">
 
 <h2 align="center">6. Postman
