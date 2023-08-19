@@ -23,11 +23,10 @@
     │   └── users                          - Модуль с пользователями
     ├── README.md -> Описание (мы тут)     
     ├── info - Статика для README
-    ├── infra -> Настройка запсука
+    ├── infra -> Настройка запуска
     │   ├── docker-compose.yaml            - Запуск контейнеров
     │   ├── docker_postgres_init.sql       - Создание ДБ referral_system_db
-    │   ├── nginx                          - Настройка nginx
-    │   └── static
+    │   └── nginx                          - Настройка nginx
     ├── ReferralSystem.postman_collection.json - коллекция Postman
     └── TASK.docx -> ТЗ
 
