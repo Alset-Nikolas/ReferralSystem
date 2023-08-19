@@ -124,14 +124,14 @@
 <h2 align="center">4. Документация Api
 <img width="40" height="40" src="https://img.icons8.com/office/40/Archive-List-Of-Parts.png" alt="Archive-List-Of-Parts"/>
 </h2>
-Если перейти по /swagger-ui/ будет Swagger-ui
+Документация тут  
+<a href='http://62.84.115.61/swagger-ui/'>/swagger-ui/</a><br><br>
 <img src="./info/docs.png" name="image-name">
 
 <h2 align="center">5. Админка
 <img width="48" height="48" src="https://img.icons8.com/color/48/admin-settings-male.png" alt="admin-settings-male"/>
 </h2>
-Если перейти по /admin/ будет форма авторизации. Если зайти под админом откроется адмнка
-Телефон админа 7-000-000-0000
+Админка тут <a href='http://62.84.115.61/admin/'>/admin/</a>. <br>Нужно авторизоваться под админом (7-000-000-0000).<br><br>
 <img src="./info/admin.png" name="image-name">
 
 <h2 align="center">6. Postman
@@ -143,10 +143,10 @@
 </div>
 
 
-<h2 align="center">7. Для тестов полезен pgAdmin
+<h2 align="center">7. pgAdmin
 <img width="48" height="48" src="https://img.icons8.com/color/48/postgreesql.png" alt="postgreesql"/>
 </h2>
-http://ip_server:5555/
+ pgAdmin тут <a href='http://62.84.115.61/admin/'>http://0.0.0.0:5555</a><br><br>
 <div align="center">
 <img src="./info/pgadmin.png" name="image-name" center>
 </div>
