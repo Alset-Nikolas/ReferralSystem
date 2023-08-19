@@ -1,8 +1,5 @@
-from typing import Any, Dict
-from django import forms
-from django.contrib.auth.forms import AuthenticationForm, UsernameField
 from django.core.exceptions import ValidationError
-from django.forms import CharField, Form, PasswordInput
+from django.forms import CharField, Form
 
 from .validators import check_user_phone_token, phone_validator
 

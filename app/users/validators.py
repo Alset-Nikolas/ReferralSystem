@@ -1,5 +1,4 @@
 from django.core.validators import RegexValidator
-import typing as t
 
 phone_validator = RegexValidator("^7-([0-9]){3}-([0-9]){3}-([0-9]){4}$", "The phone number provided is invalid")
 

@@ -1,7 +1,4 @@
 from django.contrib.auth import get_user_model
-from django.contrib.auth.hashers import check_password
-from django.db.models import Q
-from tokens.models import Token
 
 from .validators import check_user_phone_token
 

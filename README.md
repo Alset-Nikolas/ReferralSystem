@@ -4,8 +4,7 @@
 </a>
 </h1>
 
-<h3 align="center">Приложение для тестов <a href='http://62.84.115.61/'> RefferalSystem</a></h3> 
-
+<h3 align="center">Приложение для тестов <a href='http://62.84.115.61/'> RefferalSystem</a></h3>
 
 <h2 align="center">1. Структура репозитория:
 <img width="64" height="64" src="https://img.icons8.com/external-justicon-lineal-color-justicon/64/external-tree-tree-justicon-lineal-color-justicon-6.png" alt="external-tree-tree-justicon-lineal-color-justicon-6"/>
@@ -39,7 +38,9 @@
 ```
     git clone git@github.com:Alset-Nikolas/ReferralSystem.git
 ```
+
 2. Настройка файла infra/.env
+
 ```
     SECRET_KEY=django-insecure-r7lng6xaaystn%o45+l=_63gqr*h^cc$i68&-x!a0n#%&^eh5v
     
@@ -53,14 +54,13 @@
     DJANGO_SUPERUSER_PHONE=7-000-000-0000
 ```
 
-
 3. Собрать и запустить контейнеры в ./infra
+
   ```
   sudo docker-compose build
   sudo docker-compose up
   ```
 
-    
 <h2 align="center">3. Иллюстрация</h2>
 
 <img width="50" height="50" src="https://img.icons8.com/stickers/100/phone.png" alt="phone"/>

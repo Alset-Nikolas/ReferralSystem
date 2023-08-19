@@ -1,7 +1,4 @@
-from uuid import UUID
-
-from django.core.exceptions import ValidationError
-from django.forms import CharField, Form, PasswordInput
+from django.forms import CharField, Form
 
 
 def validate_token(token):

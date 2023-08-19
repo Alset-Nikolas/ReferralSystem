@@ -1,12 +1,6 @@
-from typing import Any, Dict
-
-from django.contrib.auth import login
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.messages import constants as messages
-from django.shortcuts import redirect, render
-from django.urls import resolve, reverse
+from django.shortcuts import redirect
 from django.views import View
-from django.views.generic import TemplateView
 
 from .forms import TokenFormActivate
 from .models import Token, TokenActivated

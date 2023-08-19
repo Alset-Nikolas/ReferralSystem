@@ -1,17 +1,16 @@
+import time
 from typing import Any, Dict
 
-from django import http
 from django.contrib.auth import login
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.handlers.wsgi import WSGIRequest
 from django.shortcuts import redirect, render
-from django.urls import resolve
 from django.views import View
 from django.views.generic import TemplateView
 
 from .backends import PhoneUsernameAuthenticationBackend as PhoneAuth
 from .forms import UserFormAuthByTel, UserFormCheckPhone
-import time
+
 
 class AuthUserByTelPage(View):
 

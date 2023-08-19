@@ -1,5 +1,5 @@
 from django.contrib.auth.models import (AbstractBaseUser, BaseUserManager,
-                                        PermissionsMixin, UserManager)
+                                        PermissionsMixin)
 from django.db import models
 
 from .validators import phone_validator
