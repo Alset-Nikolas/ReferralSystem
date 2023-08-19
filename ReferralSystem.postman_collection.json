@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "2320ab67-6d9d-4cec-8a87-2d539efbe1ec",
-		"name": "ReferralSystem",
+		"_postman_id": "4e174e8a-ef1e-495b-8dcc-4ab70742ea9a",
+		"name": "ReferralSystem Copy",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "21151897"
 	},
@@ -518,7 +518,7 @@
 			"name": "tokens",
 			"item": [
 				{
-					"name": "login_Step2 Copy 2",
+					"name": "TokenActiavte",
 					"event": [
 						{
 							"listen": "test",
@@ -545,14 +545,15 @@
 							"mode": "formdata",
 							"formdata": [
 								{
-									"key": "phone",
-									"value": "7-111-111-1111",
+									"key": "token",
+									"value": "cFGNCw",
 									"type": "text"
 								},
 								{
 									"key": "phone_token",
 									"value": "1111",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								}
 							]
 						},
@@ -596,7 +597,7 @@
 	"variable": [
 		{
 			"key": "url",
-			"value": "http://127.0.0.1:8000",
+			"value": "http://0.0.0.0",
 			"type": "string"
 		}
 	]
