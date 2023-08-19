@@ -26,6 +26,8 @@
 ```
 2. Настройка файла infra/.env
 ```
+    SECRET_KEY = 'django-insecure-r7lng6xaaystn%o45+l=_63gqr*h^cc$i68&-x!a0n#%&^eh5v'
+    
     DB_ENGINE=django.db.backends.postgresql
     DB_NAME=referral_system_db 
     POSTGRES_USER=postgres
@@ -123,3 +125,44 @@
 <div align="center">
 <img src="./info/postman.png" name="image-name" center>
 </div>
+
+
+<h2 align="center">7. Для тестов полезен pgAdmin
+<img width="50" height="50" src="https://img.icons8.com/bubbles/50/man-with-a-mailbox.png" alt="man-with-a-mailbox"/>
+</h2>
+http://ip_server:5555/
+<div align="center">
+<img src="./info/pgadmin.png" name="image-name" center>
+</div>
+
+Инструкция по запуску
+<details>
+  <summary>логин/пароль --> z@mail.ru/z</summary>
+  <div align="center">
+    <img src="./info/pgadmin_login.png" name="image-name">
+  </div>
+</details>
+<details>
+  <summary>Servers/Register/Сервер...</summary>
+  <div align="center">
+    <img src="./info/pg_step1.png" name="image-name">
+  </div>
+</details>
+<details>
+  <summary>Имя - любое</summary>
+  <div align="center">
+    <img src="./info/pg_step2.png" name="image-name">
+  </div>
+</details>
+<details>
+  <summary>refferal_system_db/5432/referral_system_db/postgres/qwerty1234QWERTY</summary>
+  <div align="center">
+    <img src="./info/pg_step3.png" name="image-name">
+  </div>
+</details>
+<details>
+  <summary>Ура</summary>
+  <div align="center">
+    <img src="./info/pg_step_end.png" name="image-name">
+  </div>
+</details>

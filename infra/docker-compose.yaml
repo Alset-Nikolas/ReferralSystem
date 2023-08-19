@@ -37,7 +37,6 @@ services:
       - refferal_system_web
   pgadmin:
     image: dpage/pgadmin4
-    container_name: yandex_dimplom_pgadmin
     depends_on:
       - refferal_system_db
     environment:
